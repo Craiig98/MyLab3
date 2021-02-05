@@ -30,6 +30,10 @@ adminRouter.get('/users', function(req, res) {
 adminRouter.get('/posts', function(req, res) {
  res.send('I show all the posts!'); });
 
+// route with parameters (http://localhost:PORT/admin/users/:name)
+ adminRouter.get('/users/:name', function(req, res) {
+ res.send('hello ' + req.params.name + '!'); });
+
 // apply the routes to our application
 app.use('/admin', adminRouter);
 

@@ -31,6 +31,16 @@ var adminRouter = express.Router();
  next();
  });
 
+app.route('/login')
+ // show the form (GET http://localhost:PORT/login)
+ .get(function(req, res) {
+ res.send('this is the login form');
+ })
+ // process the form (POST http://localhost:PORT/login)
+ .post(function(req, res) { console.log('processing');
+ res.send('processing the login form!');
+ });
+
 // admin main page. the dashboard (http://localhost:PORT/admin)
 adminRouter.get('/', function(req, res) {
  res.send('I am the dashboard!'); });
